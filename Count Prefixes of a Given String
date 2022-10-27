@@ -1,0 +1,9 @@
+class Solution:
+    def countPrefixes(self, words: List[str], s: str) -> int:
+        count=0
+        for i in range(len(s)):
+            p=s[:i+1]
+            if p in words:
+                k=words.count(p)
+                count=count+k
+        return count
