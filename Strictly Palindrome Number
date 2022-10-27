@@ -1,0 +1,32 @@
+class Solution(object):
+    def isStrictlyPalindromic(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        def solve(n):
+            if n<i:
+                return str(n)
+            s=""
+            while n!=0:
+                s=str(n%i)+s
+                n=n//i
+            return s
+        for i in range(2,n-1):
+            str1=solve(i)
+            d=[]
+            p=[]
+            for j in str1:
+                if j not in d:
+                    d.append(j)
+                    k=str1.count(j)
+                    p.append(k)
+            u2=0
+            for u1 in p:
+                if u1%2!=0:
+                    u2+=1
+            if u2>1:
+                return False
+                break
+        else:
+            return True
