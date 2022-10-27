@@ -1,0 +1,15 @@
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        lst=["000","111","222","333","444","555","666","777","888","999"]
+        p=[]
+        k=0
+        for i in lst:
+            if i in num:
+                p.append(int(i))
+        if len(p)==0:
+            return ""
+        else:
+            if max(p)==0:
+                return "000"
+            else:
+                return str(max(p))
