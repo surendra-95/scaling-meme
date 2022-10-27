@@ -1,0 +1,17 @@
+class Solution(object):
+    def findSubarrays(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        p=len(nums)
+        d=[]
+        for i in range(p-1):
+            k=nums[i]+nums[i+1]
+            if k in d:
+                k1=True
+                break
+            d.append(k)
+        else:
+            k1=False
+        return k1
