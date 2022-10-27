@@ -1,0 +1,14 @@
+class Solution:
+    def productQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+        powers=[]
+        answers=[]
+        lst=queries
+        for y in range(32):
+            if 1<<y & n:
+                powers.append(1<<y)
+        for i in lst:
+            c=1
+            for u in range(i[0],i[1]+1):
+                c=c*powers[u]
+            answers.append(c%1000000007)
+        return answers
